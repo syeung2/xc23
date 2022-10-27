@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>My Bash File | XC23</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="My Bash File" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tests using bash commands" />
+<meta property="og:description" content="Tests using bash commands" />
+<link rel="canonical" href="https://syeung2.github.io/xc23/jupyter/2022/08/25/bash_file.html" />
+<meta property="og:url" content="https://syeung2.github.io/xc23/jupyter/2022/08/25/bash_file.html" />
+<meta property="og:site_name" content="XC23" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-25T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="My Bash File" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-25T00:00:00-05:00","datePublished":"2022-08-25T00:00:00-05:00","description":"Tests using bash commands","headline":"My Bash File","mainEntityOfPage":{"@type":"WebPage","@id":"https://syeung2.github.io/xc23/jupyter/2022/08/25/bash_file.html"},"url":"https://syeung2.github.io/xc23/jupyter/2022/08/25/bash_file.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/xc23/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://syeung2.github.io/xc23/feed.xml" title="XC23" /><link rel="shortcut icon" type="image/x-icon" href="/xc23/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/xc23/">XC23</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/xc23/about/">About Me</a><a class="page-link" href="/xc23/schedule/">Schedule</a><a class="page-link" href="/xc23/search/">Search</a><a class="page-link" href="/xc23/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">My Bash File</h1><p class="page-description">Tests using bash commands</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-25T00:00:00-05:00" itemprop="datePublished">
+        Aug 25, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/xc23/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/syeung2/xc23/tree/master/_notebooks/2022-08-25-bash_file.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/xc23/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/syeung2/xc23/master?filepath=_notebooks%2F2022-08-25-bash_file.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/xc23/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/syeung2/xc23/blob/master/_notebooks/2022-08-25-bash_file.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/xc23/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fsyeung2%2Fxc23%2Fblob%2Fmaster%2F_notebooks%2F2022-08-25-bash_file.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/xc23/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-08-25-bash_file.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">echo</span> <span class="s2">"Using conditional statement to create a project directory and project"</span>
+
+<span class="c1"># Variable section</span>
+<span class="n">export</span> <span class="n">project_dir</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">vscode</span>  <span class="c1"># change vscode to different name to test git clone</span>
+<span class="n">export</span> <span class="n">project</span><span class="o">=</span><span class="err">$</span><span class="n">project_dir</span><span class="o">/</span><span class="n">APCSP</span>  <span class="c1"># change APCSP to name of project from git clone</span>
+<span class="n">export</span> <span class="n">project_repo</span><span class="o">=</span><span class="s2">"https://github.com/nighthawkcoders/APCSP.git"</span>  <span class="c1"># change to project of choice</span>
+
+<span class="n">cd</span> <span class="o">~</span>    <span class="c1"># start in home directory</span>
+
+<span class="c1"># Conditional block to make a project directory</span>
+<span class="k">if</span> <span class="p">[</span> <span class="err">!</span> <span class="o">-</span><span class="n">d</span> <span class="err">$</span><span class="n">project_dir</span> <span class="p">]</span>
+<span class="n">then</span> 
+    <span class="n">echo</span> <span class="s2">"Directory $project_dir does not exists... makinng directory $project_dir"</span>
+    <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="err">$</span><span class="n">project_dir</span>
+<span class="n">fi</span>
+<span class="n">echo</span> <span class="s2">"Directory $project_dir exists."</span> 
+
+<span class="c1"># Conditional block to git clone a project from project_repo</span>
+<span class="k">if</span> <span class="p">[</span> <span class="err">!</span> <span class="o">-</span><span class="n">d</span> <span class="err">$</span><span class="n">project</span> <span class="p">]</span>
+<span class="n">then</span>
+    <span class="n">echo</span> <span class="s2">"Directory $project does not exists... cloning $project_repo"</span>
+    <span class="n">cd</span> <span class="err">$</span><span class="n">project_dir</span>
+    <span class="n">git</span> <span class="n">clone</span> <span class="err">$</span><span class="n">project_repo</span>
+    <span class="n">cd</span> <span class="o">~</span>
+<span class="n">fi</span>
+<span class="n">echo</span> <span class="s2">"Directory $project exists."</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Using conditional statement to create a project directory and project
+Directory /home/syeung2/vscode exists.
+Directory /home/syeung2/vscode/APCSP does not exists... cloning https://github.com/nighthawkcoders/APCSP.git
+Cloning into 'APCSP'...
+remote: Enumerating objects: 9173, done.
+remote: Counting objects: 100% (748/748), done.
+remote: Compressing objects: 100% (313/313), done.
+remote: Total 9173 (delta 454), reused 702 (delta 414), pack-reused 8425
+Receiving objects: 100% (9173/9173), 16.49 MiB | 12.58 MiB/s, done.
+Resolving deltas: 100% (4949/4949), done.
+Directory /home/syeung2/vscode/APCSP exists.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">echo</span> <span class="s2">"Navigate to project, then navigate to area wwhere files were cloned"</span>
+<span class="n">cd</span> <span class="err">$</span><span class="n">project</span>
+<span class="n">pwd</span>
+
+<span class="n">echo</span> <span class="s2">""</span>
+<span class="n">echo</span> <span class="s2">"list top level or root of files with project pulled from github"</span>
+<span class="n">ls</span>
+
+<span class="n">echo</span> <span class="s2">""</span>
+<span class="n">echo</span> <span class="s2">"list again with hidden files pulled from github"</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">a</span>   <span class="c1"># hidden files flag, many shell commands have flags</span>
+
+<span class="n">echo</span> <span class="s2">""</span>
+<span class="n">echo</span> <span class="s2">"list all files in long format"</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">al</span>   <span class="c1"># all files and long listing</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Navigate to project, then navigate to area wwhere files were cloned
+/home/syeung2/vscode/APCSP
+
+list top level or root of files with project pulled from github
+<span class="ansi-green-intense-fg ansi-bold">Gemfile</span>    <span class="ansi-blue-intense-fg ansi-bold">_action_files</span>    <span class="ansi-blue-intense-fg ansi-bold">_layouts</span>    <span class="ansi-blue-intense-fg ansi-bold">_posts</span>  <span class="ansi-green-intense-fg ansi-bold">docker-compose.yml</span>
+LICENSE    _config.yml      <span class="ansi-blue-intense-fg ansi-bold">_notebooks</span>  <span class="ansi-blue-intense-fg ansi-bold">_sass</span>   <span class="ansi-blue-intense-fg ansi-bold">images</span>
+<span class="ansi-green-intense-fg ansi-bold">Makefile</span>   <span class="ansi-blue-intense-fg ansi-bold">_fastpages_docs</span>  <span class="ansi-blue-intense-fg ansi-bold">_pages</span>      <span class="ansi-blue-intense-fg ansi-bold">_word</span>   index.html
+<span class="ansi-green-intense-fg ansi-bold">README.md</span>  <span class="ansi-blue-intense-fg ansi-bold">_includes</span>        <span class="ansi-blue-intense-fg ansi-bold">_plugins</span>    <span class="ansi-blue-intense-fg ansi-bold">assets</span>  <span class="ansi-blue-intense-fg ansi-bold">python</span>
+
+list again with hidden files pulled from github
+<span class="ansi-blue-intense-fg ansi-bold">.</span>                   .gitignore  <span class="ansi-blue-intense-fg ansi-bold">_action_files</span>    <span class="ansi-blue-intense-fg ansi-bold">_pages</span>    <span class="ansi-green-intense-fg ansi-bold">docker-compose.yml</span>
+<span class="ansi-blue-intense-fg ansi-bold">..</span>                  <span class="ansi-blue-intense-fg ansi-bold">.vscode</span>     _config.yml      <span class="ansi-blue-intense-fg ansi-bold">_plugins</span>  <span class="ansi-blue-intense-fg ansi-bold">images</span>
+.devcontainer.json  <span class="ansi-green-intense-fg ansi-bold">Gemfile</span>     <span class="ansi-blue-intense-fg ansi-bold">_fastpages_docs</span>  <span class="ansi-blue-intense-fg ansi-bold">_posts</span>    index.html
+<span class="ansi-blue-intense-fg ansi-bold">.git</span>                LICENSE     <span class="ansi-blue-intense-fg ansi-bold">_includes</span>        <span class="ansi-blue-intense-fg ansi-bold">_sass</span>     <span class="ansi-blue-intense-fg ansi-bold">python</span>
+.gitattributes      <span class="ansi-green-intense-fg ansi-bold">Makefile</span>    <span class="ansi-blue-intense-fg ansi-bold">_layouts</span>         <span class="ansi-blue-intense-fg ansi-bold">_word</span>
+<span class="ansi-blue-intense-fg ansi-bold">.github</span>             <span class="ansi-green-intense-fg ansi-bold">README.md</span>   <span class="ansi-blue-intense-fg ansi-bold">_notebooks</span>       <span class="ansi-blue-intense-fg ansi-bold">assets</span>
+
+list all files in long format
+total 120
+drwxr-xr-x 18 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">.</span>
+drwxr-xr-x  4 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">..</span>
+-rw-r--r--  1 syeung2 syeung2   420 Aug 25 22:34 .devcontainer.json
+drwxr-xr-x  8 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">.git</span>
+-rw-r--r--  1 syeung2 syeung2    84 Aug 25 22:34 .gitattributes
+drwxr-xr-x  4 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">.github</span>
+-rw-r--r--  1 syeung2 syeung2   917 Aug 25 22:34 .gitignore
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">.vscode</span>
+-rwxr-xr-x  1 syeung2 syeung2  1304 Aug 25 22:34 <span class="ansi-green-intense-fg ansi-bold">Gemfile</span>
+-rw-r--r--  1 syeung2 syeung2 11351 Aug 25 22:34 LICENSE
+-rwxr-xr-x  1 syeung2 syeung2  1422 Aug 25 22:34 <span class="ansi-green-intense-fg ansi-bold">Makefile</span>
+-rwxr-xr-x  1 syeung2 syeung2  3614 Aug 25 22:34 <span class="ansi-green-intense-fg ansi-bold">README.md</span>
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_action_files</span>
+-rw-r--r--  1 syeung2 syeung2  3716 Aug 25 22:34 _config.yml
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_fastpages_docs</span>
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_includes</span>
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_layouts</span>
+drwxr-xr-x  3 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_notebooks</span>
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_pages</span>
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_plugins</span>
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_posts</span>
+drwxr-xr-x  3 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_sass</span>
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">_word</span>
+drwxr-xr-x  4 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">assets</span>
+-rwxr-xr-x  1 syeung2 syeung2  1136 Aug 25 22:34 <span class="ansi-green-intense-fg ansi-bold">docker-compose.yml</span>
+drwxr-xr-x  5 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">images</span>
+-rw-r--r--  1 syeung2 syeung2  1061 Aug 25 22:34 index.html
+drwxr-xr-x  2 syeung2 syeung2  4096 Aug 25 22:34 <span class="ansi-blue-intense-fg ansi-bold">python</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">test</span><span class="o">=</span><span class="err">“</span><span class="n">python3</span><span class="err">”</span> <span class="c1"># keyword</span>
+<span class="n">check</span><span class="o">=</span><span class="err">`</span><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="err">$</span><span class="n">test</span><span class="err">`</span> <span class="c1"># run command</span>
+<span class="n">n</span><span class="o">=</span><span class="err">$</span><span class="p">{</span><span class="c1">#check} # determine length</span>
+<span class="k">if</span> <span class="p">[[</span> <span class="err">$</span><span class="p">{</span><span class="n">n</span><span class="p">}</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">]];</span>  <span class="c1"># testt length</span>
+<span class="n">then</span> <span class="c1"># greater than zero</span>
+    <span class="n">echo</span> <span class="err">“$</span><span class="n">check</span><span class="err">”</span>
+<span class="k">else</span> <span class="c1"># less than zero</span>
+    <span class="n">echo</span> <span class="err">“$</span><span class="n">check</span><span class="err">”</span>
+<span class="n">fi</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>“”
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">echo</span> <span class="s2">"Look for posts"</span>
+<span class="n">export</span> <span class="n">posts</span><span class="o">=</span><span class="err">$</span><span class="n">project</span><span class="o">/</span><span class="n">_posts</span>  <span class="c1"># _posts inside project</span>
+<span class="n">cd</span> <span class="err">$</span><span class="n">posts</span>  <span class="c1"># this should exist per fastpages</span>
+<span class="n">pwd</span>  <span class="c1"># present working directory</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">l</span>  <span class="c1"># list posts</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Look for posts
+/home/syeung2/vscode/APCSP/_posts
+total 228
+-rw-r--r-- 1 syeung2 syeung2 21306 Aug 25 22:34 2022-06-01-TT160-deploy.md
+-rw-r--r-- 1 syeung2 syeung2  5861 Aug 25 22:34 2022-07-07-PBL-binary.md
+-rw-r--r-- 1 syeung2 syeung2  3085 Aug 25 22:34 2022-07-08-PBL-grade_calc.md
+-rw-r--r-- 1 syeung2 syeung2  3698 Aug 25 22:34 2022-07-08-PBL-graph.md
+-rw-r--r-- 1 syeung2 syeung2  5729 Aug 25 22:34 2022-07-08-PBL-life.md
+-rw-r--r-- 1 syeung2 syeung2 14387 Aug 25 22:34 2022-07-08-PBL-snake.md
+-rw-r--r-- 1 syeung2 syeung2   334 Aug 25 22:34 2022-07-10-PBL-database.md
+-rw-r--r-- 1 syeung2 syeung2  2908 Aug 25 22:34 2022-07-10-PBL-jokes.md
+-rw-r--r-- 1 syeung2 syeung2  4046 Aug 25 22:34 2022-07-10-PBL-rapidapi.md
+-rw-r--r-- 1 syeung2 syeung2  6685 Aug 25 22:34 2022-07-19-PBL-calculator.md
+-rw-r--r-- 1 syeung2 syeung2 23325 Aug 25 22:34 2022-07-25-CSP-workshop.md
+-rw-r--r-- 1 syeung2 syeung2  2333 Aug 25 22:34 2022-08-15-TP000-student_score_history.md
+-rw-r--r-- 1 syeung2 syeung2  4363 Aug 25 22:34 2022-08-15-TP100-pseudo_code.md
+-rw-r--r-- 1 syeung2 syeung2  7968 Aug 25 22:34 2022-08-15-TR100-tool_setup.md
+-rw-r--r-- 1 syeung2 syeung2 15409 Aug 25 22:34 2022-08-15-TT100-tools.md
+-rw-r--r-- 1 syeung2 syeung2  5590 Aug 25 22:34 2022-08-15-TT101-vscode-wsl.md
+-rw-r--r-- 1 syeung2 syeung2  2155 Aug 25 22:34 2022-08-22-TR110-intro_python.md
+-rw-r--r-- 1 syeung2 syeung2  5173 Aug 25 22:34 2022-08-22-TT110-fastpages.md
+-rw-r--r-- 1 syeung2 syeung2  2798 Aug 25 22:34 2022-08-22-TT110-focus.md
+-rw-r--r-- 1 syeung2 syeung2  2737 Aug 25 22:34 2022-08-29-TR120-data_abstract.md
+-rw-r--r-- 1 syeung2 syeung2 10683 Aug 25 22:34 2022-08-29-TT120-agile.md
+-rw-r--r-- 1 syeung2 syeung2  4498 Aug 25 22:34 2022-08-29-TT120-html_fragments.md
+-rw-r--r-- 1 syeung2 syeung2  9037 Aug 25 22:34 2022-09-05-TP130-create_performance_task.md
+-rw-r--r-- 1 syeung2 syeung2  7753 Aug 25 22:34 2022-09-05-TP131-create-task-bria.md
+-rw-r--r-- 1 syeung2 syeung2  8066 Aug 25 22:34 2022-09-05-TR130-creative_development.md
+-rw-r--r-- 1 syeung2 syeung2  3520 Aug 25 22:34 2022-09-05-TT130-applab.md
+-rw-r--r-- 1 syeung2 syeung2   720 Aug 25 22:34 README.md
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="syeung2/xc23"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/xc23/jupyter/2022/08/25/bash_file.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/xc23/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/xc23/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/xc23/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>XC Info Site for &#39;23</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/xc23/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/xc23/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
